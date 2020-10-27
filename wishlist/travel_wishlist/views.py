@@ -12,9 +12,10 @@ def place_list(request):
             place.save() # saves to db
             return redirect('place_list') # reload home page
 
-
+    # Creating the place object and filtering by name
     places = Place.objects.filter(visited=False).order_by('name')
     new_place_form = NewPlaceForm() # used to create HTML
+    # Render dictionary data into html
     return render(request, 'travel_wishlist/wishlist.html', { 'places': places, 'new_place_form': new_place_form })
 
 
