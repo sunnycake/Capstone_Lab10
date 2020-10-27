@@ -77,9 +77,7 @@ class TestVisitPlace(TestCase):
         visit_place_url = reverse('place_was_visited', args=(2, ))
         response = self.client.post(visit_place_url, follow=True)
 
-
         self.assertTemplateUsed(response, 'travel_wishlist/wishlist.html')
-
         self.assertNotContains(response, 'New York')
         self.assertContains(response, 'Tokyo')
 
@@ -92,4 +90,4 @@ class TestVisitPlace(TestCase):
 
         visit_nonexistent_place_url = reverse('place_was_visited', args=(123456, ))
         response = self.client.post(visit_nonexistent_place_url, follow=True)
-        self.assertEqual(404, response.status_code)  # not found
+        self.assertEqual(404, response.status_code) 
