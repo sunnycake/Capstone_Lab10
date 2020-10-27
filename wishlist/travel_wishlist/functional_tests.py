@@ -2,6 +2,7 @@ from selenium.webdriver.chrome.webdriver import WebDriver
 from django.test import LiveServerTestCase
 from .models import Place
 
+
 class TitleTest(LiveServerTestCase):
 
     @classmethod
