@@ -73,7 +73,7 @@ def place_details(request, place_pk):
     # if GET request, show place info and optional form
     # if place is visited, show form; if place is not visited, no form.
         if place.visited:
-            review_form = TripReviewForm(instance=place)  # Pre-populate with data from this Place instance
+            review_form = TripReviewForm(instance=place)
             return render(request, 'travel_wishlist/place_detail.html', {'place': place, 'review_form': review_form} )
 
         else:

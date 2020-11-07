@@ -6,7 +6,7 @@ class NewPlaceForm(forms.ModelForm):
         model = Place 
         fields = ('name', 'visited')
 
-
+# create django's built in date input
 class DateInput(forms.DateInput):
     input_type = 'date'  # Override the default input type, which is 'text'
 
